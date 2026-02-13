@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "src/components/ui/button";
 import {
 	Card,
@@ -13,8 +15,11 @@ import { Label } from "src/components/ui/label";
 import { Separator } from "src/components/ui/separator";
 import { Switch } from "src/components/ui/switch";
 import { Textarea } from "src/components/ui/textarea";
+import { useToast } from "src/shared/hooks/toast/use-toast";
 
 export default function Page() {
+	const toast = useToast();
+
 	return (
 		<div className="mx-auto max-w-3xl space-y-10 p-10">
 			<h1 className="text-3xl font-bold">Component Preview</h1>
@@ -36,6 +41,13 @@ export default function Page() {
 					<Button size="lg">Large</Button>
 					<Button disabled>Disabled</Button>
 				</div>
+			</section>
+
+			<Separator />
+
+			<section className="space-y-3">
+				<h2 className="text-xl font-semibold">Test Toast</h2>
+				<Button onClick={() => toast.success("Toast triggered.")}>Trigger toast</Button>
 			</section>
 
 			<Separator />

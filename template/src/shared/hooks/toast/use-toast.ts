@@ -1,12 +1,8 @@
-const noop = (_message: string) => {};
+import { toast } from "sonner";
 
-/**
- * Stub useToast hook.
- * Replace this with a real toast implementation (e.g. sonner, react-hot-toast).
- */
 export const useToast = () => ({
-	success: noop,
-	error: noop,
-	info: noop,
-	warning: noop,
+	success: (message: string) => toast.success(message),
+	error: (message: string) => toast.error(message),
+	info: (message: string) => toast.info(message),
+	warning: (message: string) => toast.warning(message),
 });
