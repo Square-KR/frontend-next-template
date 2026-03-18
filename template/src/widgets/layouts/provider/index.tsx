@@ -2,7 +2,6 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { type ReactNode, useState } from "react";
-import { Toaster } from "sonner";
 
 type Props = { children: ReactNode };
 
@@ -26,13 +25,7 @@ const Providers = ({ children }: Props) => {
 			}),
 	);
 
-	return (
-		<QueryClientProvider client={queryClient}>
-			{children}
-
-			<Toaster />
-		</QueryClientProvider>
-	);
+	return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 };
 
 export default Providers;

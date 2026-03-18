@@ -7,3 +7,7 @@ dist/
 .env.*
 !.env.example
 template/node_modules/
+
+.playwright-cli/
+
+.omc/
